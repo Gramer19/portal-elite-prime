@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+input, button, select {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 10px rgba(229, 184, 66, 0.15);
+}

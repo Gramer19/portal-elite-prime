@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Prime - Materiales</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-[#0f0e0c] text-white min-h-screen flex font-sans">
+
+  <!-- Sidebar Lateral -->
+  <aside class="w-64 bg-[#141310] border-r border-[#2a261f] p-5 flex flex-col justify-between hidden md:flex min-h-screen">
+    <div>
+      <div class="flex items-center space-x-3 mb-8 px-2">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-b from-[#e5b842] to-[#8a6d20] flex items-center justify-center p-0.5">
+          <div class="bg-[#141310] w-full h-full rounded-full flex items-center justify-center">
+            <i data-lucide="shield" class="w-5 h-5 text-[#e5b842]"></i>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-black tracking-wider text-sm">ELITE <span class="text-[#e5b842]">PRIME</span></h2>
+          <p class="text-[10px] text-zinc-400 font-semibold tracking-wider">ESTUDIANTES</p>
+        </div>
+      </div>
+
+      <nav class="space-y-1.5">
+        <a href="dashboard.html" class="flex items-center space-x-3 text-zinc-400 hover:text-white hover:bg-[#1c1a14] px-4 py-3 rounded-xl text-sm font-medium transition-all">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <span>Inicio</span>
+        </a>
+        <a href="materiales.html" class="flex items-center space-x-3 bg-[#e5b842] text-black font-bold px-4 py-3 rounded-xl text-sm transition-all">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+          <span>Materiales</span>
+        </a>
+        <a href="examenes.html" class="flex items-center space-x-3 text-zinc-400 hover:text-white hover:bg-[#1c1a14] px-4 py-3 rounded-xl text-sm font-medium transition-all">
+          <i data-lucide="file-check" class="w-5 h-5"></i>
+          <span>Exámenes Pasados</span>
+        </a>
+        <a href="apuntes.html" class="flex items-center space-x-3 text-zinc-400 hover:text-white hover:bg-[#1c1a14] px-4 py-3 rounded-xl text-sm font-medium transition-all">
+          <i data-lucide="notebook-pen" class="w-5 h-5"></i>
+          <span>Apuntes</span>
+        </a>
+        <a href="anuncios.html" class="flex items-center space-x-3 text-zinc-400 hover:text-white hover:bg-[#1c1a14] px-4 py-3 rounded-xl text-sm font-medium transition-all">
+          <i data-lucide="megaphone" class="w-5 h-5"></i>
+          <span>Anuncios</span>
+        </a>
+        <a href="perfil.html" class="flex items-center space-x-3 text-zinc-400 hover:text-white hover:bg-[#1c1a14] px-4 py-3 rounded-xl text-sm font-medium transition-all">
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <span>Mi Perfil</span>
+        </a>
+      </nav>
+    </div>
+
+    <a href="index.html" class="flex items-center space-x-3 text-red-400 hover:bg-red-500/10 px-4 py-2.5 rounded-xl text-sm font-medium transition-all">
+      <i data-lucide="log-out" class="w-5 h-5"></i>
+      <span>Cerrar Sesión</span>
+    </a>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <main class="flex-1 p-6 md:p-10 overflow-y-auto">
+    <header class="mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold">Materiales de Estudio 📚</h1>
+      <p class="text-xs md:text-sm text-zinc-400 mt-1">Encuentra libros oficiales, guías teóricas y prácticas para tus materias.</p>
+    </header>
+
+    <section class="flex flex-col sm:flex-row items-center gap-4 mb-8">
+      <div class="relative w-full sm:w-2/3">
+        <i data-lucide="search" class="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+        <input type="text" id="input-buscar" placeholder="Buscar por materia, tema o libro..."
+          class="w-full bg-[#141310] border border-[#2a261f] rounded-xl py-3 pl-11 pr-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e5b842] transition-colors">
+      </div>
+
+      <select id="filtro-categoria" class="w-full sm:w-1/3 bg-[#141310] border border-[#2a261f] rounded-xl py-3 px-4 text-sm text-white focus:outline-none focus:border-[#e5b842] transition-colors">
+        <option value="todos">Todos los materiales</option>
+        <option value="guia">Guías y Prácticas</option>
+        <option value="libro">Libros Base</option>
+      </select>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div id="contenedor-materiales" class="lg:col-span-2 space-y-3">
+        <!-- Se llena con JavaScript -->
+      </div>
+
+      <div class="bg-[#141310] border border-[#2a261f] rounded-2xl p-5 flex flex-col justify-between h-[450px]">
+        <div>
+          <h3 id="visor-titulo" class="font-bold text-sm text-[#e5b842] mb-1">Selecciona un archivo</h3>
+          <p id="visor-materia" class="text-xs text-zinc-400 mb-4">Haz clic en "Ver" en cualquier documento para previsualizarlo.</p>
+          
+          <div id="visor-box" class="w-full h-64 bg-[#1c1a14] border border-[#2a261f] rounded-xl flex items-center justify-center text-center p-4">
+            <div class="text-zinc-500">
+              <i data-lucide="file-text" class="w-12 h-12 mx-auto mb-2 opacity-40"></i>
+              <p class="text-xs">Sin documento seleccionado</p>
+            </div>
+          </div>
+        </div>
+
+        <a id="btn-descargar" href="#" download class="w-full bg-[#e5b842] text-black font-bold py-3 rounded-xl flex items-center justify-center space-x-2 transition-all opacity-50 cursor-not-allowed mt-4">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Descargar Archivo</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Prime - Centro de Estudiantes</title>
+  
+  <!-- Tailwind CSS por CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-[#0f0e0c] text-white min-h-screen font-sans flex items-center justify-center p-4">
+
+  <!-- Contenedor Principal del Login -->
+  <main class="w-full max-w-4xl bg-[#141310] border border-[#2a261f] rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    
+    <!-- Lado Izquierdo: Branding e Imagen -->
+    <section class="relative bg-gradient-to-b from-[#1c1a14] to-[#0f0e0c] p-8 flex flex-col justify-between items-center text-center border-r border-[#2a261f]">
+      <div class="space-y-4 my-auto">
+        <!-- Contenedor del Logo / Mascota -->
+        <div class="relative w-40 h-40 mx-auto rounded-full p-1 bg-gradient-to-b from-[#e5b842] to-[#8a6d20] shadow-lg shadow-[#e5b842]/10 flex items-center justify-center">
+          <i data-lucide="shield" class="w-20 h-20 text-[#e5b842]"></i>
+        </div>
+
+        <div>
+          <h1 class="text-3xl font-black tracking-wider text-white">
+            ELITE <span class="text-[#e5b842]">PRIME</span>
+          </h1>
+          <p class="text-xs uppercase tracking-widest text-zinc-400 font-semibold mt-1">Centro de Estudiantes</p>
+        </div>
+      </div>
+
+      <!-- Footer tarjeta izquierda -->
+      <p class="text-xs text-zinc-500 font-medium mt-6">
+        © 2026 Elite Prime - Todos los derechos reservados.
+      </p>
+    </section>
+
+    <!-- Lado Derecho: Formulario de Login -->
+    <section class="p-8 md:p-10 flex flex-col justify-center">
+      <div class="mb-8 text-center md:text-left">
+        <h2 class="text-2xl font-bold tracking-tight text-[#e5b842]">INICIA SESIÓN</h2>
+        <p class="text-xs text-zinc-400 mt-1">Ingresa tus credenciales para acceder al material</p>
+      </div>
+
+      <form id="login-form" class="space-y-5">
+        <!-- Campo Código SIS -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Código SIS</label>
+          <div class="relative">
+            <i data-lucide="user" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+            <input type="text" id="codigo-sis" placeholder="Ej. 20240192" required
+              class="w-full bg-[#1c1a14] border border-[#383329] rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e5b842] transition-colors">
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-2">Contraseña</label>
+          <div class="relative">
+            <i data-lucide="lock" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500"></i>
+            <input type="password" id="password" placeholder="••••••••" required
+              class="w-full bg-[#1c1a14] border border-[#383329] rounded-xl py-3 pl-10 pr-4 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#e5b842] transition-colors">
+          </div>
+        </div>
+
+        <!-- Mensaje de Error (oculto por defecto) -->
+        <p id="error-message" class="text-xs text-red-400 hidden text-center font-medium"></p>
+
+        <!-- Botón Ingresar -->
+        <button type="submit" 
+          class="w-full bg-gradient-to-r from-[#e5b842] to-[#c79a2b] hover:from-[#f0c44d] hover:to-[#d6a733] text-black font-bold py-3.5 rounded-xl shadow-lg shadow-[#e5b842]/20 flex items-center justify-center space-x-2 transition-all transform active:scale-[0.99]">
+          <span>INGRESAR</span>
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+      </form>
+
+      <div class="mt-6 text-center">
+        <a href="#" class="text-xs text-zinc-400 hover:text-[#e5b842] transition-colors font-medium">¿Problemas para ingresar?</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
